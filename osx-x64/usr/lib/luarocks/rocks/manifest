@@ -157,7 +157,7 @@ dependencies = {
       ['1.15.0-1'] = {}
    },
    dkjson = {
-      ['2.5-1'] = {
+      ['2.5-2'] = {
          {
             constraints = {
                {
@@ -168,7 +168,7 @@ dependencies = {
                }, {
                   op = "<",
                   version = {
-                     5, 3, string = "5.3"
+                     5, 4, string = "5.4"
                   }
                }
             },
@@ -207,7 +207,7 @@ dependencies = {
       }
    },
    ['lua-term'] = {
-      ['0.1-1'] = {}
+      ['0.3-1'] = {}
    },
    lua_cliargs = {
       ['2.5-1'] = {
@@ -296,7 +296,7 @@ dependencies = {
       }
    },
    lub = {
-      ['1.0.7-1'] = {
+      ['1.1.0-1'] = {
          {
             constraints = {
                {
@@ -307,7 +307,7 @@ dependencies = {
                }, {
                   op = "<",
                   version = {
-                     5, 3, string = "5.3"
+                     5, 4, string = "5.4"
                   }
                }
             },
@@ -554,7 +554,7 @@ modules = {
       "coxpcall/1.15.0-1"
    },
    dkjson = {
-      "dkjson/2.5-1"
+      "dkjson/2.5-2"
    },
    lfs = {
       "luafilesystem/1.6.3-1"
@@ -809,16 +809,19 @@ modules = {
       "luassert/1.7.6-0"
    },
    lub = {
-      "lub/1.0.7-1"
+      "lub/1.1.0-1"
    },
    ['lub.Autoload'] = {
-      "lub/1.0.7-1"
+      "lub/1.1.0-1"
    },
    ['lub.Dir'] = {
-      "lub/1.0.7-1"
+      "lub/1.1.0-1"
+   },
+   ['lub.Param'] = {
+      "lub/1.1.0-1"
    },
    ['lub.Template'] = {
-      "lub/1.0.7-1"
+      "lub/1.1.0-1"
    },
    mediator = {
       "mediator_lua/1.1.1-0"
@@ -995,13 +998,16 @@ modules = {
       "luasocket/3.0rc1-2"
    },
    term = {
-      "lua-term/0.1-1"
+      "lua-term/0.3-1"
    },
    ['term.colors'] = {
-      "lua-term/0.1-1"
+      "lua-term/0.3-1"
    },
    ['term.core'] = {
-      "lua-term/0.1-1"
+      "lua-term/0.3-1"
+   },
+   ['term.cursor'] = {
+      "lua-term/0.3-1"
    },
    xml = {
       "xml/1.1.2-1"
@@ -1035,8 +1041,8 @@ repository = {
             },
             dependencies = {
                ansicolors = "1.0.2-3",
-               dkjson = "2.5-1",
-               ['lua-term'] = "0.1-1",
+               dkjson = "2.5-2",
+               ['lua-term'] = "0.3-1",
                lua_cliargs = "2.5-1",
                luafilesystem = "1.6.3-1",
                luasocket = "3.0rc1-2",
@@ -1103,7 +1109,7 @@ repository = {
       }
    },
    dkjson = {
-      ['2.5-1'] = {
+      ['2.5-2'] = {
          {
             arch = "installed",
             commands = {},
@@ -1140,7 +1146,7 @@ repository = {
       }
    },
    ['lua-term'] = {
-      ['0.1-1'] = {
+      ['0.3-1'] = {
          {
             arch = "installed",
             commands = {},
@@ -1148,7 +1154,8 @@ repository = {
             modules = {
                term = "term/init.lua",
                ['term.colors'] = "term/colors.lua",
-               ['term.core'] = "term/core.so"
+               ['term.core'] = "term/core.so",
+               ['term.cursor'] = "term/cursor.lua"
             }
          }
       }
@@ -1312,7 +1319,7 @@ repository = {
       }
    },
    lub = {
-      ['1.0.7-1'] = {
+      ['1.1.0-1'] = {
          {
             arch = "installed",
             commands = {},
@@ -1323,6 +1330,7 @@ repository = {
                lub = "lub/init.lua",
                ['lub.Autoload'] = "lub/Autoload.lua",
                ['lub.Dir'] = "lub/Dir.lua",
+               ['lub.Param'] = "lub/Param.lua",
                ['lub.Template'] = "lub/Template.lua"
             }
          }
@@ -1429,7 +1437,7 @@ repository = {
             commands = {},
             dependencies = {
                luafilesystem = "1.6.3-1",
-               lub = "1.0.7-1"
+               lub = "1.1.0-1"
             },
             modules = {
                xml = "xml/init.lua",
