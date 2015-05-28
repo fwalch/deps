@@ -207,8 +207,13 @@ end
 -- Allows leaving a directory (e.g. for deleting it) in
 -- a crossplatform way.
 function fs_lua.change_dir_to_root()
-   table.insert(dir_stack, lfs.currentdir())
+   local current = lfs.currentdir()
+   if not current or current == "" then
+      return false
+   end
+   table.insert(dir_stack, current)
    lfs.chdir("/") -- works on Windows too
+   return true
 end
 
 --- Change working directory to the previous in the dir stack.
@@ -540,7 +545,7 @@ local redirect_protocols = {
 local function request(url, method, http, loop_control)
    local result = {}
    
-   local proxy = cfg.proxy
+   local proxy = cfg.http_proxy
    if type(proxy) ~= "string" then proxy = nil end
    -- LuaSocket's http.request crashes when given URLs missing the scheme part.
    if proxy and not proxy:find("://") then
@@ -648,6 +653,11 @@ function fs_lua.download(url, filename, cache)
    assert(type(filename) == "string" or not filename)
 
    filename = fs.absolute_name(filename or dir.base_name(url))
+
+   -- delegate to the configured downloader so we don't have to deal with whitelists
+   if cfg.no_proxy then
+      return fs.use_downloader(url, filename, cache)
+   end
    
    local content, err, https_err
    if util.starts_with(url, "http:") then
@@ -655,7 +665,8 @@ function fs_lua.download(url, filename, cache)
    elseif util.starts_with(url, "ftp:") then
       content, err = ftp.get(url)
    elseif util.starts_with(url, "https:") then
-      if luasec_ok then
+      -- skip LuaSec when proxy is enabled since it is not supported
+      if luasec_ok and not cfg.https_proxy then
          content, err = http_request(url, https, cache and filename)
       else
          https_err = true
@@ -732,7 +743,7 @@ function fs_lua.chmod(file, mode)
    -- LuaPosix (as of 5.1.15) does not support octal notation...
    if mode:sub(1,1) == "0" then
       local new_mode = {}
-      for c in mode:sub(2):gmatch(".") do
+      for c in mode:sub(-3):gmatch(".") do
          table.insert(new_mode, octal_to_rwx[c])
       end
       mode = table.concat(new_mode)

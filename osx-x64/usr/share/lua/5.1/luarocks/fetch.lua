@@ -193,9 +193,8 @@ function fetch.load_local_rockspec(filename, quick)
    end
    local globals = err
 
-   local ok, err = true, nil
    if not quick then
-      ok, err = type_check.type_check_rockspec(rockspec, globals)
+      local ok, err = type_check.type_check_rockspec(rockspec, globals)
       if not ok then
          return nil, filename..": "..err
       end
@@ -319,9 +318,10 @@ function fetch.get_sources(rockspec, extract, dest_dir)
    local url = rockspec.source.url
    local name = rockspec.name.."-"..rockspec.version
    local filename = rockspec.source.file
-   local source_file, store_dir, err, errcode
+   local source_file, store_dir
+   local ok, err, errcode
    if dest_dir then
-      local ok, err = fs.change_dir(dest_dir)
+      ok, err = fs.change_dir(dest_dir)
       if not ok then return nil, err, "dest_dir" end
       source_file, err, errcode = fetch.fetch_url(url, filename)
       fs.pop_dir()
