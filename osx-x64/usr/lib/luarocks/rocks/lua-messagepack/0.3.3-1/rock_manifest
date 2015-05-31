@@ -3,17 +3,17 @@ rock_manifest = {
       Makefile = "9cc476336c1b1f4214e19147c3b263fb",
       ["doc.css"] = "667de0f03e32a1b92faacffc424db377",
       ["index.html"] = "f4d336ceb7bf81f2d57a7469c2a1f0a8",
-      ["msgpack.html"] = "592635d676006de24fbb750ca6da9e6c"
+      ["msgpack.html"] = "0d587f003ec8b0c82bebf77257f48b88"
    },
    lua = {
-      ["MessagePack.lua"] = "7a837ece13c16ef8b30a439f93e7dc9c"
+      ["MessagePack.lua"] = "cc0f54013422c20a4a959b25c266aae7"
    },
-   ["lua-messagepack-0.3.2-1.rockspec"] = "42fa702be7f1320db68f5f67c775e22c",
+   ["lua-messagepack-0.3.3-1.rockspec"] = "824b5bd0a1a7f7d33e9a6683391ff922",
    test = {
       ["00-require.t"] = "ec524dd93992bfbea79c14ba0d888381",
       ["01-spectest.t"] = "dc99e72df849829074beefcfa01fd090",
       ["02-except.t"] = "14d1300b1c0c9cb148b5ccb89a69afaa",
-      ["03-edge.t"] = "2d3b59b38323ae9a8e0c8e14a90be690",
+      ["03-edge.t"] = "c1795a1125667b21585752484cd9b772",
       ["04-cover.t"] = "87c0c6ef246b45aeeef6bd9b4469c414",
       ["11-userdata-bc.t"] = "d84a1b730d96cc3aef12a272eedb3c41",
       ["12-metatable.t"] = "5cf1482aa8836d18ee424a09888cccd0",

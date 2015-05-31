@@ -192,7 +192,7 @@ dependencies = {
       }
    },
    ["lua-messagepack"] = {
-      ["0.3.2-1"] = {
+      ["0.3.3-1"] = {
          {
             constraints = {
                {
@@ -422,7 +422,7 @@ dependencies = {
 }
 modules = {
    MessagePack = {
-      "lua-messagepack/0.3.2-1"
+      "lua-messagepack/0.3.3-1"
    },
    ansicolors = {
       "ansicolors/1.0.2-3"
@@ -1146,7 +1146,7 @@ repository = {
       }
    },
    ["lua-messagepack"] = {
-      ["0.3.2-1"] = {
+      ["0.3.3-1"] = {
          {
             arch = "installed",
             commands = {},
@@ -1371,7 +1371,7 @@ repository = {
             commands = {},
             dependencies = {
                coxpcall = "1.15.0-1",
-               ["lua-messagepack"] = "0.3.2-1"
+               ["lua-messagepack"] = "0.3.3-1"
             },
             modules = {
                ["nvim.async_session"] = "nvim/async_session.lua",
