@@ -5,7 +5,7 @@ rock_manifest = {
    },
    lib = {
       nvim = {
-         ["loop.so"] = "2c0c44ab0d3be849228553936b4d7d88"
+         ["loop.so"] = "eb73dde3adbfe68b507edaa31b4c65cb"
       }
    },
    lua = {
