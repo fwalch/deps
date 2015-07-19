@@ -22,24 +22,29 @@ local pendingMt = {
   __type = 'pending'
 }
 
-local function metatype(obj)
-  local otype = type(obj)
-  return otype == 'table' and (getmetatable(obj) or {}).__type or otype
+local function errortype(obj)
+  local mt = debug.getmetatable(obj)
+  if mt == failureMt or mt == failureMtNoString then
+    return 'failure'
+  elseif mt == pendingMt then
+    return 'pending'
+  end
+  return 'error'
 end
 
 local function hasToString(obj)
-  return type(obj) == 'string' or (getmetatable(obj) or {}).__tostring
+  return type(obj) == 'string' or (debug.getmetatable(obj) or {}).__tostring
 end
 
 local function isCallable(obj)
-    return (type(obj) == 'function' or (getmetatable(obj) or {}).__call)
+  return type(obj) == 'function' or (debug.getmetatable(obj) or {}).__call
 end
 
 return function()
   local mediator = require 'mediator'()
 
   local busted = {}
-  busted.version = '2.0.rc6-0'
+  busted.version = '2.0.rc10-0'
 
   local root = require 'busted.context'()
   busted.context = root.ref()
@@ -143,7 +148,7 @@ return function()
 
   function busted.bindfenv(callable, var, value)
     local env = {}
-    local f = (getmetatable(callable) or {}).__call or callable
+    local f = (debug.getmetatable(callable) or {}).__call or callable
     setmetatable(env, { __index = getfenv(f) })
     env[var] = value
     setfenv(f, env)
@@ -152,7 +157,7 @@ return function()
   function busted.wrap(callable)
     if isCallable(callable) then
       -- prioritize __call if it exists, like in files
-      environment.wrap((getmetatable(callable) or {}).__call or callable)
+      environment.wrap((debug.getmetatable(callable) or {}).__call or callable)
     end
   end
 
@@ -162,8 +167,7 @@ return function()
     local status = 'success'
 
     local ret = { xpcall(run, function(msg)
-      local errType = metatype(msg)
-      status = ((errType == 'pending' or errType == 'failure') and errType or 'error')
+      status = errortype(msg)
       trace = busted.getTrace(element, 3, msg)
       message = busted.rewriteMessage(element, msg, trace)
     end) }
@@ -175,6 +179,15 @@ return function()
 
     busted.context.pop()
     return unpack(ret)
+  end
+
+  function busted.safe_publish(descriptor, channel, element, ...)
+    local args = {...}
+    local n = select('#', ...)
+    local status = busted.safe(descriptor, function()
+      busted.publish(channel, element, unpack(args, 1, n))
+    end, element)
+    return status:success()
   end
 
   function busted.exportApi(key, value)

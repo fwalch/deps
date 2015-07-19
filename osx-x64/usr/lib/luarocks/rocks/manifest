@@ -1,6 +1,6 @@
 commands = {
    busted = {
-      "busted/2.0.rc8-0"
+      "busted/2.0.rc10-0"
    },
    luarocks = {
       "luarocks/scm-1"
@@ -16,23 +16,8 @@ commands = {
    }
 }
 dependencies = {
-   ansicolors = {
-      ["1.0.2-3"] = {
-         {
-            constraints = {
-               {
-                  op = ">=",
-                  version = {
-                     5, 1, string = "5.1"
-                  }
-               }
-            },
-            name = "lua"
-         }
-      }
-   },
    busted = {
-      ["2.0.rc8-0"] = {
+      ["2.0.rc10-0"] = {
          {
             constraints = {
                {
@@ -90,23 +75,12 @@ dependencies = {
                {
                   op = ">=",
                   version = {
-                     1, 7, 6, revision = 0,
-                     string = "1.7.6-0"
+                     1, 7, 8, revision = 0,
+                     string = "1.7.8-0"
                   }
                }
             },
             name = "luassert"
-         }, {
-            constraints = {
-               {
-                  op = ">=",
-                  version = {
-                     1, 0, revision = 1,
-                     string = "1.0-1"
-                  }
-               }
-            },
-            name = "ansicolors"
          }, {
             constraints = {
                {
@@ -270,7 +244,7 @@ dependencies = {
       }
    },
    luassert = {
-      ["1.7.6-0"] = {
+      ["1.7.8-0"] = {
          {
             constraints = {
                {
@@ -295,38 +269,8 @@ dependencies = {
          }
       }
    },
-   lub = {
-      ["1.1.0-1"] = {
-         {
-            constraints = {
-               {
-                  op = ">=",
-                  version = {
-                     5, 1, string = "5.1"
-                  }
-               }, {
-                  op = "<",
-                  version = {
-                     5, 4, string = "5.4"
-                  }
-               }
-            },
-            name = "lua"
-         }, {
-            constraints = {
-               {
-                  op = ">=",
-                  version = {
-                     1, 4, 0, string = "1.4.0"
-                  }
-               }
-            },
-            name = "luafilesystem"
-         }
-      }
-   },
    mediator_lua = {
-      ["1.1.1-0"] = {
+      ["1.1.2-0"] = {
          {
             constraints = {
                {
@@ -370,7 +314,7 @@ dependencies = {
       }
    },
    say = {
-      ["1.3-0"] = {
+      ["1.3-1"] = {
          {
             constraints = {
                {
@@ -381,41 +325,6 @@ dependencies = {
                }
             },
             name = "lua"
-         }
-      }
-   },
-   xml = {
-      ["1.1.2-1"] = {
-         {
-            constraints = {
-               {
-                  op = ">=",
-                  version = {
-                     5, 1, string = "5.1"
-                  }
-               }, {
-                  op = "<",
-                  version = {
-                     5, 3, string = "5.3"
-                  }
-               }
-            },
-            name = "lua"
-         }, {
-            constraints = {
-               {
-                  op = ">=",
-                  version = {
-                     1, 0, 3, string = "1.0.3"
-                  }
-               }, {
-                  op = "<",
-                  version = {
-                     2, string = "2"
-                  }
-               }
-            },
-            name = "lub"
          }
       }
    }
@@ -424,128 +333,125 @@ modules = {
    MessagePack = {
       "lua-messagepack/0.3.3-1"
    },
-   ansicolors = {
-      "ansicolors/1.0.2-3"
-   },
    busted = {
-      "busted/2.0.rc8-0"
+      "busted/2.0.rc10-0"
    },
    ["busted.block"] = {
-      "busted/2.0.rc8-0"
+      "busted/2.0.rc10-0"
    },
    ["busted.compatibility"] = {
-      "busted/2.0.rc8-0"
+      "busted/2.0.rc10-0"
    },
    ["busted.context"] = {
-      "busted/2.0.rc8-0"
+      "busted/2.0.rc10-0"
    },
    ["busted.core"] = {
-      "busted/2.0.rc8-0"
+      "busted/2.0.rc10-0"
    },
    ["busted.done"] = {
-      "busted/2.0.rc8-0"
+      "busted/2.0.rc10-0"
    },
    ["busted.environment"] = {
-      "busted/2.0.rc8-0"
+      "busted/2.0.rc10-0"
    },
    ["busted.execute"] = {
-      "busted/2.0.rc8-0"
+      "busted/2.0.rc10-0"
    },
    ["busted.languages.ar"] = {
-      "busted/2.0.rc8-0"
+      "busted/2.0.rc10-0"
    },
    ["busted.languages.de"] = {
-      "busted/2.0.rc8-0"
+      "busted/2.0.rc10-0"
    },
    ["busted.languages.en"] = {
-      "busted/2.0.rc8-0"
+      "busted/2.0.rc10-0"
    },
    ["busted.languages.es"] = {
-      "busted/2.0.rc8-0"
+      "busted/2.0.rc10-0"
    },
    ["busted.languages.fr"] = {
-      "busted/2.0.rc8-0"
+      "busted/2.0.rc10-0"
    },
    ["busted.languages.ja"] = {
-      "busted/2.0.rc8-0"
+      "busted/2.0.rc10-0"
    },
    ["busted.languages.nl"] = {
-      "busted/2.0.rc8-0"
+      "busted/2.0.rc10-0"
    },
    ["busted.languages.ru"] = {
-      "busted/2.0.rc8-0"
+      "busted/2.0.rc10-0"
    },
    ["busted.languages.th"] = {
-      "busted/2.0.rc8-0"
+      "busted/2.0.rc10-0"
    },
    ["busted.languages.ua"] = {
-      "busted/2.0.rc8-0"
+      "busted/2.0.rc10-0"
    },
    ["busted.languages.zh"] = {
-      "busted/2.0.rc8-0"
+      "busted/2.0.rc10-0"
    },
    ["busted.modules.cli"] = {
-      "busted/2.0.rc8-0"
+      "busted/2.0.rc10-0"
    },
    ["busted.modules.configuration_loader"] = {
-      "busted/2.0.rc8-0"
+      "busted/2.0.rc10-0"
    },
    ["busted.modules.files.lua"] = {
-      "busted/2.0.rc8-0"
+      "busted/2.0.rc10-0"
    },
    ["busted.modules.files.moonscript"] = {
-      "busted/2.0.rc8-0"
+      "busted/2.0.rc10-0"
    },
    ["busted.modules.files.terra"] = {
-      "busted/2.0.rc8-0"
+      "busted/2.0.rc10-0"
    },
    ["busted.modules.filter_loader"] = {
-      "busted/2.0.rc8-0"
+      "busted/2.0.rc10-0"
    },
    ["busted.modules.helper_loader"] = {
-      "busted/2.0.rc8-0"
+      "busted/2.0.rc10-0"
    },
    ["busted.modules.luacov"] = {
-      "busted/2.0.rc8-0"
+      "busted/2.0.rc10-0"
    },
    ["busted.modules.output_handler_loader"] = {
-      "busted/2.0.rc8-0"
+      "busted/2.0.rc10-0"
    },
    ["busted.modules.test_file_loader"] = {
-      "busted/2.0.rc8-0"
+      "busted/2.0.rc10-0"
    },
    ["busted.outputHandlers.TAP"] = {
-      "busted/2.0.rc8-0"
+      "busted/2.0.rc10-0"
    },
    ["busted.outputHandlers.base"] = {
-      "busted/2.0.rc8-0"
+      "busted/2.0.rc10-0"
    },
    ["busted.outputHandlers.gtest"] = {
-      "busted/2.0.rc8-0"
+      "busted/2.0.rc10-0"
    },
    ["busted.outputHandlers.json"] = {
-      "busted/2.0.rc8-0"
+      "busted/2.0.rc10-0"
    },
    ["busted.outputHandlers.junit"] = {
-      "busted/2.0.rc8-0"
+      "busted/2.0.rc10-0"
    },
    ["busted.outputHandlers.plainTerminal"] = {
-      "busted/2.0.rc8-0"
+      "busted/2.0.rc10-0"
    },
    ["busted.outputHandlers.sound"] = {
-      "busted/2.0.rc8-0"
+      "busted/2.0.rc10-0"
    },
    ["busted.outputHandlers.utfTerminal"] = {
-      "busted/2.0.rc8-0"
+      "busted/2.0.rc10-0"
    },
    ["busted.runner"] = {
-      "busted/2.0.rc8-0"
+      "busted/2.0.rc10-0"
    },
    ["busted.status"] = {
-      "busted/2.0.rc8-0"
+      "busted/2.0.rc10-0"
    },
    ["busted.utils"] = {
-      "busted/2.0.rc8-0"
+      "busted/2.0.rc10-0"
    },
    cliargs = {
       "lua_cliargs/2.5-1"
@@ -761,82 +667,82 @@ modules = {
       "luarocks/scm-1"
    },
    luassert = {
-      "luassert/1.7.6-0"
+      "luassert/1.7.8-0"
    },
    ["luassert.assert"] = {
-      "luassert/1.7.6-0"
+      "luassert/1.7.8-0"
    },
    ["luassert.assertions"] = {
-      "luassert/1.7.6-0"
+      "luassert/1.7.8-0"
    },
    ["luassert.compatibility"] = {
-      "luassert/1.7.6-0"
+      "luassert/1.7.8-0"
    },
    ["luassert.formatters"] = {
-      "luassert/1.7.6-0"
+      "luassert/1.7.8-0"
    },
    ["luassert.formatters.binarystring"] = {
-      "luassert/1.7.6-0"
+      "luassert/1.7.8-0"
    },
    ["luassert.languages.ar"] = {
-      "luassert/1.7.6-0"
+      "luassert/1.7.8-0"
    },
    ["luassert.languages.en"] = {
-      "luassert/1.7.6-0"
+      "luassert/1.7.8-0"
    },
    ["luassert.languages.fr"] = {
-      "luassert/1.7.6-0"
+      "luassert/1.7.8-0"
    },
    ["luassert.languages.ja"] = {
-      "luassert/1.7.6-0"
+      "luassert/1.7.8-0"
    },
    ["luassert.languages.nl"] = {
-      "luassert/1.7.6-0"
+      "luassert/1.7.8-0"
    },
    ["luassert.languages.ru"] = {
-      "luassert/1.7.6-0"
+      "luassert/1.7.8-0"
    },
    ["luassert.languages.ua"] = {
-      "luassert/1.7.6-0"
+      "luassert/1.7.8-0"
    },
    ["luassert.languages.zh"] = {
-      "luassert/1.7.6-0"
+      "luassert/1.7.8-0"
+   },
+   ["luassert.match"] = {
+      "luassert/1.7.8-0"
+   },
+   ["luassert.matchers"] = {
+      "luassert/1.7.8-0"
+   },
+   ["luassert.matchers.composite"] = {
+      "luassert/1.7.8-0"
+   },
+   ["luassert.matchers.core"] = {
+      "luassert/1.7.8-0"
    },
    ["luassert.mock"] = {
-      "luassert/1.7.6-0"
+      "luassert/1.7.8-0"
    },
    ["luassert.modifiers"] = {
-      "luassert/1.7.6-0"
+      "luassert/1.7.8-0"
+   },
+   ["luassert.namespaces"] = {
+      "luassert/1.7.8-0"
    },
    ["luassert.spy"] = {
-      "luassert/1.7.6-0"
+      "luassert/1.7.8-0"
    },
    ["luassert.state"] = {
-      "luassert/1.7.6-0"
+      "luassert/1.7.8-0"
    },
    ["luassert.stub"] = {
-      "luassert/1.7.6-0"
+      "luassert/1.7.8-0"
    },
    ["luassert.util"] = {
-      "luassert/1.7.6-0"
-   },
-   lub = {
-      "lub/1.1.0-1"
-   },
-   ["lub.Autoload"] = {
-      "lub/1.1.0-1"
-   },
-   ["lub.Dir"] = {
-      "lub/1.1.0-1"
-   },
-   ["lub.Param"] = {
-      "lub/1.1.0-1"
-   },
-   ["lub.Template"] = {
-      "lub/1.1.0-1"
+      "luassert/1.7.8-0"
    },
    mediator = {
-      "mediator_lua/1.1.1-0"
+      "mediator_lua/1.1.2-0"
    },
    mime = {
       "luasocket/3.0rc1-2"
@@ -977,7 +883,7 @@ modules = {
       "lpeg/0.12.2-1"
    },
    say = {
-      "say/1.3-0"
+      "say/1.3-1"
    },
    socket = {
       "luasocket/3.0rc1-2"
@@ -1020,48 +926,26 @@ modules = {
    },
    ["term.cursor"] = {
       "lua-term/0.3-1"
-   },
-   xml = {
-      "xml/1.1.2-1"
-   },
-   ["xml.Parser"] = {
-      "xml/1.1.2-1"
-   },
-   ["xml.core"] = {
-      "xml/1.1.2-1"
    }
 }
 repository = {
-   ansicolors = {
-      ["1.0.2-3"] = {
-         {
-            arch = "installed",
-            commands = {},
-            dependencies = {},
-            modules = {
-               ansicolors = "ansicolors.lua"
-            }
-         }
-      }
-   },
    busted = {
-      ["2.0.rc8-0"] = {
+      ["2.0.rc10-0"] = {
          {
             arch = "installed",
             commands = {
                busted = "busted"
             },
             dependencies = {
-               ansicolors = "1.0.2-3",
                dkjson = "2.5-2",
                ["lua-term"] = "0.3-1",
                lua_cliargs = "2.5-1",
                luafilesystem = "1.6.3-1",
                luasocket = "3.0rc1-2",
-               luassert = "1.7.6-0",
-               mediator_lua = "1.1.1-0",
+               luassert = "1.7.8-0",
+               mediator_lua = "1.1.2-0",
                penlight = "1.3.2-2",
-               say = "1.3-0"
+               say = "1.3-1"
             },
             modules = {
                busted = "busted/init.lua",
@@ -1302,12 +1186,12 @@ repository = {
       }
    },
    luassert = {
-      ["1.7.6-0"] = {
+      ["1.7.8-0"] = {
          {
             arch = "installed",
             commands = {},
             dependencies = {
-               say = "1.3-0"
+               say = "1.3-1"
             },
             modules = {
                luassert = "luassert/init.lua",
@@ -1324,8 +1208,13 @@ repository = {
                ["luassert.languages.ru"] = "luassert/languages/ru.lua",
                ["luassert.languages.ua"] = "luassert/languages/ua.lua",
                ["luassert.languages.zh"] = "luassert/languages/zh.lua",
+               ["luassert.match"] = "luassert/match.lua",
+               ["luassert.matchers"] = "luassert/matchers/init.lua",
+               ["luassert.matchers.composite"] = "luassert/matchers/composite.lua",
+               ["luassert.matchers.core"] = "luassert/matchers/core.lua",
                ["luassert.mock"] = "luassert/mock.lua",
                ["luassert.modifiers"] = "luassert/modifiers.lua",
+               ["luassert.namespaces"] = "luassert/namespaces.lua",
                ["luassert.spy"] = "luassert/spy.lua",
                ["luassert.state"] = "luassert/state.lua",
                ["luassert.stub"] = "luassert/stub.lua",
@@ -1334,26 +1223,8 @@ repository = {
          }
       }
    },
-   lub = {
-      ["1.1.0-1"] = {
-         {
-            arch = "installed",
-            commands = {},
-            dependencies = {
-               luafilesystem = "1.6.3-1"
-            },
-            modules = {
-               lub = "lub/init.lua",
-               ["lub.Autoload"] = "lub/Autoload.lua",
-               ["lub.Dir"] = "lub/Dir.lua",
-               ["lub.Param"] = "lub/Param.lua",
-               ["lub.Template"] = "lub/Template.lua"
-            }
-         }
-      }
-   },
    mediator_lua = {
-      ["1.1.1-0"] = {
+      ["1.1.2-0"] = {
          {
             arch = "installed",
             commands = {},
@@ -1435,30 +1306,13 @@ repository = {
       }
    },
    say = {
-      ["1.3-0"] = {
+      ["1.3-1"] = {
          {
             arch = "installed",
             commands = {},
             dependencies = {},
             modules = {
                say = "say/init.lua"
-            }
-         }
-      }
-   },
-   xml = {
-      ["1.1.2-1"] = {
-         {
-            arch = "installed",
-            commands = {},
-            dependencies = {
-               luafilesystem = "1.6.3-1",
-               lub = "1.1.0-1"
-            },
-            modules = {
-               xml = "xml/init.lua",
-               ["xml.Parser"] = "xml/Parser.lua",
-               ["xml.core"] = "xml/core.so"
             }
          }
       }
